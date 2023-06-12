@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<nav-bar></nav-bar>
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="store-selector" id="Android-IOS">
+            <button [ngClass]="{ 'active': store === 'android' }" class="btn" (click)="active_store('android')"><i class="fa fa-android"></i></button>
+            <button [ngClass]="{ 'active': store === 'itunes' }" class="btn" (click)="active_store('itunes')"><i class="fa fa-apple"></i></button>
+          </div>
+      </div>
+      <div class="col">
+        <select class="select-dropdown" (change)="onCountryChange($event)">
+            <option *ngFor="let country of countries" [value]="country.code">{{country.name}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <input class="date-input" type="date" [value]="startDate" [max]="maxDate" (change)="dateChanged($event)">
+      </div>
+    </div>
+</div>
+  <hr>
+
+  <!--Loader  *ngIf="isLoading === true"-->
+
+  <loader *ngIf="isLoading === true"></loader>
+
+  <div class="row" *ngIf="isLoading === false">
+    <div class="col-md-4"  *ngFor="let genre of genres">
+        <app-genre-card [genre] = "genre"></app-genre-card>
+    </div>
+  </div>

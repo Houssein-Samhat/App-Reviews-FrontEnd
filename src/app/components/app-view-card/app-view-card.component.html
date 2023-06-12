@@ -1,0 +1,12 @@
+<a (click)="showAppDetails(appView.appId)">
+    <div class="card m-3" style="width: 18rem;">
+        <img [src]="appView.icon_url" class="card-img-top" alt="">
+        <div class="card-body text-center">
+        <h5 class="card-title">{{appView.appName}}</h5>
+        <p class="card-title">{{appView.publisher_name}}</p>
+        <div class="rating-stars">
+            <span *ngFor="let star of getRatingStars(appView.rating)" class="star">{{ star === 1 ? '★' : '☆' }}</span>
+          </div>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,16 @@
+<form [formGroup]="myForm" class="box" action="login.html" method="POST" (ngSubmit)="submit()" style="margin-top: 30px;">
+    <h1>Login</h1>
+    <input type="text" name="userName" placeholder="Enter Username" id="username" 
+        [ngClass]="{'has-success':email.valid && (email.dirty || email.touched), 'has-danger':email.invalid && (email.dirty || email.touched)}" formControlName="email">
+    <div clas="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+        <p style="color: red;" *ngIf="email.errors['required']">Email is required!</p>
+        <p style="color: red;" *ngIf="email.errors['pattern']">Email is Incorrect</p>
+    </div>
+    <input type="password" name="pass" placeholder="Enter Password" id="password" formControlName="pass"
+    [ngClass]="{'has-success':pass.valid && (pass.dirty || pass.touched), 'has-danger':pass.invalid && (pass.dirty || pass.touched)}">
+    <div clas="form-control-feedback" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+        <p style="color: red;">at least 8 characters should be entered!</p>
+    </div>
+    <input type="submit" name="submit" value="Login">
+</form>
+    <!--<pre> {{myForm.value | json}} </pre> -->

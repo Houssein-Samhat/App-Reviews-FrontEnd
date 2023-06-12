@@ -1,0 +1,22 @@
+<div class="app-details">
+    <img class="app-icon" [src]="app.icon_url" alt="App Icon">
+
+    <div class="app-name">{{app.app_name}}</div>
+
+    <div class="publisher">{{app.publisher_name}}</div>
+
+    <div class="rating-stars">
+        <span *ngFor="let star of getRatingStars(app.all_rating)" class="star">{{ star === 1 ? '★' : '☆' }}</span>
+    </div>
+
+    <div class="categories">Categories: {{ app.genres.join(', ') }}</div>
+
+    <div class="description" [ngClass]="{ 'expanded': isExpanded }" [style.max-height]="maxHeight">
+        {{ app.description }}
+        <a *ngIf="showReadMore" class="read-more-link" (click)="toggleDescription()">Read More</a>
+    </div>
+    
+    <div class="image-row">
+        <img *ngFor="let image of app.screenshot_urls" class="app-image" [src]="image" height="400px">
+    </div>
+</div>

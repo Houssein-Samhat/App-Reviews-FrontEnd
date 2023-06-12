@@ -1,0 +1,26 @@
+<nav-bar></nav-bar>
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col"> 
+        <img *ngIf="store === 'android'" src="../../../assets/logo/android.png" width="60px" height="60px"/>
+        <img *ngIf="store === 'itunes'"  src="../../../assets/logo/itunes.webp" width="60px" height="60px"/>
+      </div>
+      <div class="col">
+        <h1>{{country}}</h1>
+      </div>
+      <div class="col">
+        <h3>{{date}}</h3>
+      </div>
+    </div>
+</div>
+<hr>
+<h1 class="title">{{genre_name}}</h1>
+
+<loader *ngIf="isLoading === true"></loader>
+
+<div class="row" *ngIf="isLoading === false">
+  <div class="col-md-4"  *ngFor="let app of apps">
+      <app-view-card [appView] = "app"></app-view-card>
+  </div>
+</div>
