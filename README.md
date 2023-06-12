@@ -1,3 +1,6 @@
+1) Pull the project
+2) Install all the packages "npm i"
+
 # AppReviewsDashboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
