@@ -1,8 +1,8 @@
 1) Pull the project
 2) Install all the packages "npm i"
-3) the first page will appeared is login pege. You shoul submit email and posword of one of the account added to database. you can get the username and password of it from the Seed.cs file from the dotNet projct
-4) after successfuly logIn the you will have the access to send request to the api and move between the pages
-5) Note: the appMosta api may ignore request for specific countries or date it doesnt support it all time. So may be it will not display data and response error "400" then hou should change the selected date from the calendars
+3) the first page will appeared is login pege. You should submit email and pasword of one of the account added to the .net project Database. You can get the username and password of it from the Seed.cs file from the app-reviews-api project.
+4) after successfuly logIn then you will have the access to send request to the api and move between the pages
+5) Note: the appMonsta api may ignore request for specific countries or date it doesnt support it all time. So may be it will not display data and response error "400" so you should change the selected date and country
 
 # AppReviewsDashboard
 
